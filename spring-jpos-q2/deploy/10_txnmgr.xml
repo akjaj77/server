@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<txnmgr name="SimpleTransactionManager" logger="Q2"
+class="org.jpos.transaction.TransactionManager">
+<property name="space" value="myspace" />
+<property name="queue" value="myqueue" />
+<property name="sessions" value="1" />
+<property name="debug" value="true" />
+<participant class="com.springjposq2.groupselector.Selector"
+logger="Q2" realm="Switch">
+<property name="0100" value="TestParticipant" />
+<property name="0200" value="BalanceInquiry" />
+<property name="0800" value="Authorization" />
+
+
+</participant>
+<group name="TestParticipant">
+<participant class="com.springjposq2.testparticipant.TestParticipant" logger="Q2" />
+</group>
+<group name="BalanceInquiry">
+<participant class="com.springjposq2.testparticipant.BalanceInquiry" logger="Q2" />
+</group>
+<group name="Authorization">
+<participant class="com.springjposq2.testparticipant.Authorization" logger="Q2" />
+</group>
+
+
+</txnmgr>

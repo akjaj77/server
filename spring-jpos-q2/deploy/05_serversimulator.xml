@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<server class="org.jpos.q2.iso.QServer" logger="Q2"
+  name="simulator_9000">
+ <attr name="port" type="java.lang.Integer">9000</attr>
+ <channel class="org.jpos.iso.channel.XMLChannel"
+        logger="Q2" packager="org.jpos.iso.packager.XMLPackager">
+ </channel>
+ <request-listener class="com.springjposq2.response.RequestListener" logger="Q2">
+<!--   <property name="source" value="src/main/java/com.springjposq2/response/IsoResponse.java" /> -->
+  <property name="queue" value="myqueue" />
+  <property name="space" value="myspace" />
+ </request-listener>
+</server>
